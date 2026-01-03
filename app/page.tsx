@@ -556,7 +556,7 @@ export default function ØxfileLanding() {
             <div className="flex items-center justify-center gap-6">
               {/* pump.fun */}
               <a
-                href="https://pump.fun"
+                href="https://pump.fun/coin/Tv8BY5PAn1bLXKov3ycwaBZSjn4qYDhdt86eWv2pump"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -592,7 +592,7 @@ export default function ØxfileLanding() {
 
               {/* Telegram */}
               <a
-                href="https://t.me"
+                href="https://t.me/zer0xfile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"

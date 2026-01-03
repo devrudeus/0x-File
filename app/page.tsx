@@ -187,12 +187,17 @@ export default function ØxfileLanding() {
 
           {/* CTA Button */}
           <div className="flex justify-center mb-16 fade-in" style={{ animationDelay: '0.5s', opacity: 0 }}>
-            <button className="group relative px-8 py-3 bg-purple-primary text-white font-mono border border-purple-primary hover:bg-purple-dark transition-all duration-300">
+            <a
+              href="https://zeroxfile-encrypt.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative px-8 py-3 bg-purple-primary text-white font-mono border border-purple-primary hover:bg-purple-dark transition-all duration-300 inline-block"
+            >
               <span className="flex items-center gap-2">
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 Start Encrypting
               </span>
-            </button>
+            </a>
           </div>
 
           {/* Mock Code Editor */}
@@ -599,7 +604,7 @@ export default function ØxfileLanding() {
 
               {/* GitHub */}
               <a
-                href="https://github.com"
+                href="https://github.com/ardtys/0x-File-Backend"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"

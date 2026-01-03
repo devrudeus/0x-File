@@ -185,8 +185,8 @@ export default function ØxfileLanding() {
             Client-side encryption. Zero logs. Total privacy.
           </p>
 
-          {/* CTA Button */}
-          <div className="flex justify-center mb-16 fade-in" style={{ animationDelay: '0.5s', opacity: 0 }}>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 fade-in" style={{ animationDelay: '0.5s', opacity: 0 }}>
             <a
               href="https://zeroxfile-encrypt.xyz"
               target="_blank"
@@ -196,6 +196,17 @@ export default function ØxfileLanding() {
               <span className="flex items-center gap-2">
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 Start Encrypting
+              </span>
+            </a>
+            <a
+              href="https://drive.google.com/drive/folders/1RdjaPPydyYmhj-oN4vgwW4fH83iIClZ-?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative px-8 py-3 glass-card text-purple-light font-mono border border-purple-primary/30 hover:border-purple-primary transition-all duration-300 inline-block"
+            >
+              <span className="flex items-center gap-2">
+                <Download className="w-4 h-4" />
+                Download Extension
               </span>
             </a>
           </div>

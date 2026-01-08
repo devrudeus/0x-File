@@ -14,7 +14,10 @@ import {
   ChevronRight,
   Check,
   Calendar,
-  Target
+  Target,
+  Zap,
+  Users,
+  Globe
 } from 'lucide-react'
 
 export default function RoadmapPage() {
@@ -169,24 +172,55 @@ export default function RoadmapPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-light text-lg leading-relaxed mb-6">
-                        The foundation of the Øx ecosystem: a <span className="text-white font-semibold">zero-knowledge, client-side encrypted delivery layer</span>.
-                      </p>
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Target className="w-5 h-5 text-purple-primary" />
+                            Overview
+                          </h4>
+                          <p className="text-gray-light text-lg leading-relaxed">
+                            The foundation of the Øx ecosystem: a <span className="text-white font-semibold">zero-knowledge, client-side encrypted delivery layer</span>. 0xFile establishes the core infrastructure that all future products will build upon, providing military-grade encryption without any server-side knowledge of your data.
+                          </p>
+                        </div>
 
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {[
-                          'Client-side encryption (AES-256-GCM)',
-                          'One-time & expiring access links',
-                          'Auto-destruct after access or expiry',
-                          'Zero logs & no metadata storage',
-                          'In-memory only data handling',
-                          'Open-source and auditable core'
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3 glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
-                            <Check className="w-5 h-5 text-purple-primary mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-light">{feature}</span>
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-purple-primary" />
+                            Key Features
+                          </h4>
+                          <div className="grid md:grid-cols-2 gap-4">
+                            {[
+                              { title: 'Client-side encryption (AES-256-GCM)', desc: 'Files are encrypted in your browser before upload. Servers only see encrypted data.' },
+                              { title: 'One-time & expiring access links', desc: 'Links automatically expire after first access or set time limit.' },
+                              { title: 'Auto-destruct after access or expiry', desc: 'Files are permanently deleted once accessed or expired - no recovery possible.' },
+                              { title: 'Zero logs & no metadata storage', desc: 'We don\'t track who uploads, downloads, or when. Complete anonymity.' },
+                              { title: 'In-memory only data handling', desc: 'Data exists only in RAM, never written to disk. Disappears on server restart.' },
+                              { title: 'Open-source and auditable core', desc: 'Full transparency. Anyone can verify our security claims.' }
+                            ].map((feature, idx) => (
+                              <div key={idx} className="glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
+                                <div className="flex items-start gap-3 mb-2">
+                                  <Check className="w-5 h-5 text-purple-primary mt-0.5 flex-shrink-0" />
+                                  <span className="text-white font-semibold text-sm">{feature.title}</span>
+                                </div>
+                                <p className="text-gray-light text-xs ml-8">{feature.desc}</p>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Users className="w-5 h-5 text-purple-primary" />
+                            Use Cases
+                          </h4>
+                          <div className="grid md:grid-cols-3 gap-3">
+                            {['Share sensitive documents securely', 'Send API keys & credentials', 'Deliver confidential business files', 'Share private photos/videos', 'Transfer medical records', 'Exchange legal documents'].map((useCase, idx) => (
+                              <div key={idx} className="glass-card p-3 rounded-lg text-sm text-gray-light hover:text-purple-light transition-colors">
+                                • {useCase}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -216,22 +250,65 @@ export default function RoadmapPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-light text-lg leading-relaxed mb-6">
-                        A <span className="text-white font-semibold">blockchain-based ticketing system</span> built on Solana, powered by Øxfile's encrypted delivery.
-                      </p>
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Target className="w-5 h-5 text-purple-primary" />
+                            Overview
+                          </h4>
+                          <p className="text-gray-light text-lg leading-relaxed">
+                            A <span className="text-white font-semibold">blockchain-based ticketing system</span> built on Solana, powered by Øxfile's encrypted delivery. 0xTicket revolutionizes event ticketing by making tickets non-transferable, unforgeable, and truly one-time use through cryptographic verification and on-chain minting.
+                          </p>
+                        </div>
 
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {[
-                          'On-chain ticket minting',
-                          'Encrypted ticket payloads',
-                          'One-entry verification',
-                          'Anti-screenshot & anti-resale logic'
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3 glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
-                            <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-light">{feature}</span>
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-purple-primary" />
+                            Key Features
+                          </h4>
+                          <div className="grid md:grid-cols-2 gap-4">
+                            {[
+                              { title: 'On-chain ticket minting', desc: 'Each ticket is a unique NFT minted on Solana blockchain with verifiable authenticity.' },
+                              { title: 'Encrypted ticket payloads', desc: 'QR codes contain encrypted data that can only be decrypted once during entry verification.' },
+                              { title: 'One-entry verification', desc: 'Tickets automatically burn after scanning. No duplicate entries, no reselling used tickets.' },
+                              { title: 'Anti-screenshot & anti-resale logic', desc: 'Dynamic QR codes that refresh every few seconds, making screenshots useless.' }
+                            ].map((feature, idx) => (
+                              <div key={idx} className="glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
+                                <div className="flex items-start gap-3 mb-2">
+                                  <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
+                                  <span className="text-white font-semibold text-sm">{feature.title}</span>
+                                </div>
+                                <p className="text-gray-light text-xs ml-8">{feature.desc}</p>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Users className="w-5 h-5 text-purple-primary" />
+                            Use Cases
+                          </h4>
+                          <div className="grid md:grid-cols-3 gap-3">
+                            {['Concert & music festivals', 'Sports events & tournaments', 'Corporate conferences', 'Private VIP events', 'Theater & cinema shows', 'Flight & transportation tickets'].map((useCase, idx) => (
+                              <div key={idx} className="glass-card p-3 rounded-lg text-sm text-gray-light hover:text-purple-light transition-colors">
+                                • {useCase}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Globe className="w-5 h-5 text-purple-primary" />
+                            Impact
+                          </h4>
+                          <div className="glass-card p-4 rounded-lg border border-purple-primary/20">
+                            <p className="text-gray-light text-sm leading-relaxed">
+                              Eliminates ticket fraud, scalping, and counterfeiting. Event organizers regain control over their events while attendees get guaranteed authentic tickets. The blockchain ensures transparency and immutability.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -261,22 +338,65 @@ export default function RoadmapPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-light text-lg leading-relaxed mb-6">
-                        A <span className="text-white font-semibold">universal, encrypted, one-time delivery system</span> for digital assets.
-                      </p>
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Target className="w-5 h-5 text-purple-primary" />
+                            Overview
+                          </h4>
+                          <p className="text-gray-light text-lg leading-relaxed">
+                            A <span className="text-white font-semibold">universal, encrypted, one-time delivery system</span> for digital assets. 0xLink evolves Øxfile from a file-sharing tool into a comprehensive secure delivery protocol with advanced lifecycle management, API access, and integration capabilities.
+                          </p>
+                        </div>
 
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {[
-                          'One-time access links (burn after open)',
-                          'Time-based & rule-based expiry',
-                          'Delivery state lifecycle management',
-                          'Lightweight API & SDK'
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3 glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
-                            <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-light">{feature}</span>
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-purple-primary" />
+                            Key Features
+                          </h4>
+                          <div className="grid md:grid-cols-2 gap-4">
+                            {[
+                              { title: 'One-time access links (burn after open)', desc: 'Links self-destruct immediately after being accessed once. Perfect for sensitive data.' },
+                              { title: 'Time-based & rule-based expiry', desc: 'Set expiration by time, access count, or custom rules. Maximum flexibility.' },
+                              { title: 'Delivery state lifecycle management', desc: 'Track delivery status: CREATED → SENT → OPENED → DESTROYED with full audit trail.' },
+                              { title: 'Lightweight API & SDK', desc: 'Easy integration into apps, websites, and workflows. RESTful API with comprehensive SDKs.' }
+                            ].map((feature, idx) => (
+                              <div key={idx} className="glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
+                                <div className="flex items-start gap-3 mb-2">
+                                  <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
+                                  <span className="text-white font-semibold text-sm">{feature.title}</span>
+                                </div>
+                                <p className="text-gray-light text-xs ml-8">{feature.desc}</p>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Users className="w-5 h-5 text-purple-primary" />
+                            Use Cases
+                          </h4>
+                          <div className="grid md:grid-cols-3 gap-3">
+                            {['Password reset tokens', 'Secure downloads', 'API key distribution', 'Contract signing links', 'Time-sensitive offers', 'Invitation-only content'].map((useCase, idx) => (
+                              <div key={idx} className="glass-card p-3 rounded-lg text-sm text-gray-light hover:text-purple-light transition-colors">
+                                • {useCase}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Globe className="w-5 h-5 text-purple-primary" />
+                            Impact
+                          </h4>
+                          <div className="glass-card p-4 rounded-lg border border-purple-primary/20">
+                            <p className="text-gray-light text-sm leading-relaxed">
+                              Transforms how businesses and developers handle secure content delivery. Makes it trivial to add military-grade security to any application. Reduces risk of data breaches from leaked links.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -306,22 +426,65 @@ export default function RoadmapPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-light text-lg leading-relaxed mb-6">
-                        <span className="text-white font-semibold">Controlled access</span> without exposing personal identity.
-                      </p>
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Target className="w-5 h-5 text-purple-primary" />
+                            Overview
+                          </h4>
+                          <p className="text-gray-light text-lg leading-relaxed">
+                            <span className="text-white font-semibold">Controlled access without exposing personal identity</span>. 0xAccess introduces Web3-native identity verification, allowing you to gate content based on wallet ownership, token holdings, or DIDs while maintaining complete privacy.
+                          </p>
+                        </div>
 
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {[
-                          'Wallet signature–based access',
-                          'DID-compatible identity gating',
-                          'Anti-replay & anti-bot protection',
-                          'Optional on-chain proof of access'
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3 glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
-                            <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-light">{feature}</span>
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-purple-primary" />
+                            Key Features
+                          </h4>
+                          <div className="grid md:grid-cols-2 gap-4">
+                            {[
+                              { title: 'Wallet signature–based access', desc: 'Prove ownership without revealing personal data. Sign with your wallet to access.' },
+                              { title: 'DID-compatible identity gating', desc: 'Support for Decentralized Identifiers. Future-proof identity verification.' },
+                              { title: 'Anti-replay & anti-bot protection', desc: 'Cryptographic challenges prevent automated attacks and signature reuse.' },
+                              { title: 'Optional on-chain proof of access', desc: 'Record access events on-chain for audit trails (hash only, no content).' }
+                            ].map((feature, idx) => (
+                              <div key={idx} className="glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
+                                <div className="flex items-start gap-3 mb-2">
+                                  <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
+                                  <span className="text-white font-semibold text-sm">{feature.title}</span>
+                                </div>
+                                <p className="text-gray-light text-xs ml-8">{feature.desc}</p>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Users className="w-5 h-5 text-purple-primary" />
+                            Use Cases
+                          </h4>
+                          <div className="grid md:grid-cols-3 gap-3">
+                            {['NFT holder exclusives', 'Token-gated communities', 'DAO member content', 'Whitelist-only drops', 'Verified user access', 'Web3 authentication'].map((useCase, idx) => (
+                              <div key={idx} className="glass-card p-3 rounded-lg text-sm text-gray-light hover:text-purple-light transition-colors">
+                                • {useCase}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Globe className="w-5 h-5 text-purple-primary" />
+                            Impact
+                          </h4>
+                          <div className="glass-card p-4 rounded-lg border border-purple-primary/20">
+                            <p className="text-gray-light text-sm leading-relaxed">
+                              Enables true Web3-native access control. Communities can gate content without collecting personal information. Combines the security of blockchain with the privacy of zero-knowledge systems.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -351,22 +514,65 @@ export default function RoadmapPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-light text-lg leading-relaxed mb-6">
-                        A secure, <span className="text-white font-semibold">encrypted storage layer</span> designed for temporary data, not permanent hoarding.
-                      </p>
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Target className="w-5 h-5 text-purple-primary" />
+                            Overview
+                          </h4>
+                          <p className="text-gray-light text-lg leading-relaxed">
+                            A secure, <span className="text-white font-semibold">encrypted storage layer designed for temporary data</span>, not permanent hoarding. 0xVault is built on the principle that not all data should live forever. It provides distributed, ephemeral storage with built-in expiration.
+                          </p>
+                        </div>
 
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {[
-                          'Encrypted blob storage',
-                          'Expiry-based persistence',
-                          'Multi-node ephemeral architecture',
-                          'Optional decentralized backends'
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3 glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
-                            <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-light">{feature}</span>
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-purple-primary" />
+                            Key Features
+                          </h4>
+                          <div className="grid md:grid-cols-2 gap-4">
+                            {[
+                              { title: 'Encrypted blob storage', desc: 'Store any type of encrypted data with automatic key management and rotation.' },
+                              { title: 'Expiry-based persistence', desc: 'Data automatically deleted after expiration. No manual cleanup needed.' },
+                              { title: 'Multi-node ephemeral architecture', desc: 'Distributed across multiple nodes for redundancy while maintaining ephemerality.' },
+                              { title: 'Optional decentralized backends', desc: 'Support for IPFS, Arweave, and other decentralized storage for increased resilience.' }
+                            ].map((feature, idx) => (
+                              <div key={idx} className="glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
+                                <div className="flex items-start gap-3 mb-2">
+                                  <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
+                                  <span className="text-white font-semibold text-sm">{feature.title}</span>
+                                </div>
+                                <p className="text-gray-light text-xs ml-8">{feature.desc}</p>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Users className="w-5 h-5 text-purple-primary" />
+                            Use Cases
+                          </h4>
+                          <div className="grid md:grid-cols-3 gap-3">
+                            {['Session data storage', 'Temporary file hosting', 'Cache with expiration', 'Short-term backups', 'Collaborative work files', 'Staging environments'].map((useCase, idx) => (
+                              <div key={idx} className="glass-card p-3 rounded-lg text-sm text-gray-light hover:text-purple-light transition-colors">
+                                • {useCase}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Globe className="w-5 h-5 text-purple-primary" />
+                            Impact
+                          </h4>
+                          <div className="glass-card p-4 rounded-lg border border-purple-primary/20">
+                            <p className="text-gray-light text-sm leading-relaxed">
+                              Reduces data hoarding and minimizes attack surface. Compliance-friendly storage that automatically enforces data retention policies. Perfect for GDPR and data minimization requirements.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -396,22 +602,65 @@ export default function RoadmapPage() {
                         </div>
                       </div>
 
-                      <p className="text-gray-light text-lg leading-relaxed mb-6">
-                        A <span className="text-white font-semibold">unified toolkit</span> for developers to build privacy-first apps.
-                      </p>
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Target className="w-5 h-5 text-purple-primary" />
+                            Overview
+                          </h4>
+                          <p className="text-gray-light text-lg leading-relaxed">
+                            A <span className="text-white font-semibold">unified toolkit for developers</span> to build privacy-first apps. 0xSDK packages all Øx products into easy-to-use libraries, frameworks, and tools. Comprehensive documentation, examples, and community support make integration seamless.
+                          </p>
+                        </div>
 
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {[
-                          'Unified SDK for all 0x products',
-                          'Webhooks & event callbacks',
-                          'Example templates & plugins',
-                          'Open integration support'
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3 glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
-                            <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-light">{feature}</span>
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-purple-primary" />
+                            Key Features
+                          </h4>
+                          <div className="grid md:grid-cols-2 gap-4">
+                            {[
+                              { title: 'Unified SDK for all 0x products', desc: 'One SDK to rule them all. Single import for File, Link, Ticket, Access, and Vault.' },
+                              { title: 'Webhooks & event callbacks', desc: 'Real-time notifications for file access, link clicks, ticket scans, and more.' },
+                              { title: 'Example templates & plugins', desc: 'Ready-to-use templates for React, Vue, Next.js, WordPress, and more.' },
+                              { title: 'Open integration support', desc: 'Well-documented APIs, extensive guides, and active developer community.' }
+                            ].map((feature, idx) => (
+                              <div key={idx} className="glass-card p-4 rounded-lg hover:border-purple-primary/50 transition-all">
+                                <div className="flex items-start gap-3 mb-2">
+                                  <ChevronRight className="w-5 h-5 text-purple-primary/70 mt-0.5 flex-shrink-0" />
+                                  <span className="text-white font-semibold text-sm">{feature.title}</span>
+                                </div>
+                                <p className="text-gray-light text-xs ml-8">{feature.desc}</p>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Users className="w-5 h-5 text-purple-primary" />
+                            Target Developers
+                          </h4>
+                          <div className="grid md:grid-cols-3 gap-3">
+                            {['Web3 dApp builders', 'SaaS platforms', 'Enterprise systems', 'Event organizers', 'Content creators', 'Privacy-focused apps'].map((target, idx) => (
+                              <div key={idx} className="glass-card p-3 rounded-lg text-sm text-gray-light hover:text-purple-light transition-colors">
+                                • {target}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <Globe className="w-5 h-5 text-purple-primary" />
+                            Impact
+                          </h4>
+                          <div className="glass-card p-4 rounded-lg border border-purple-primary/20">
+                            <p className="text-gray-light text-sm leading-relaxed">
+                              Democratizes access to enterprise-grade privacy infrastructure. Enables millions of developers to build privacy-first applications without deep cryptography knowledge. Creates a thriving ecosystem of privacy-respecting products.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

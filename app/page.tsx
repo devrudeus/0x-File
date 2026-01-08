@@ -11,7 +11,8 @@ import {
   Download,
   ChevronRight,
   FileText,
-  Send
+  Send,
+  MapPin
 } from 'lucide-react'
 
 export default function ØxfileLanding() {
@@ -186,7 +187,7 @@ export default function ØxfileLanding() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 fade-in" style={{ animationDelay: '0.5s', opacity: 0 }}>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4 fade-in" style={{ animationDelay: '0.5s', opacity: 0 }}>
             <a
               href="https://zeroxfile-encrypt.xyz"
               target="_blank"
@@ -211,8 +212,22 @@ export default function ØxfileLanding() {
             </a>
           </div>
 
+          {/* Roadmap Button */}
+          <div className="flex justify-center mb-16 fade-in" style={{ animationDelay: '0.6s', opacity: 0 }}>
+            <a
+              href="/roadmap"
+              className="group relative px-6 py-2 glass-card text-purple-light font-mono border border-purple-primary/20 hover:border-purple-primary/50 transition-all duration-300 inline-block text-sm"
+            >
+              <span className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                View Roadmap
+                <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </a>
+          </div>
+
           {/* Mock Code Editor */}
-          <div className="max-w-4xl mx-auto border border-purple-primary/30 rounded overflow-hidden fade-in" style={{ animationDelay: '0.6s', opacity: 0 }}>
+          <div className="max-w-4xl mx-auto border border-purple-primary/30 rounded overflow-hidden fade-in" style={{ animationDelay: '0.7s', opacity: 0 }}>
             {/* Editor Header */}
             <div className="border-b border-purple-primary/30 bg-black px-4 py-2 flex items-center justify-between">
               <div className="flex gap-2">
@@ -545,6 +560,7 @@ export default function ØxfileLanding() {
                 <a href="#" className="block text-gray-light hover:text-purple-light transition-colors text-sm">Home</a>
                 <a href="#features" className="block text-gray-light hover:text-purple-light transition-colors text-sm">Features</a>
                 <a href="#about" className="block text-gray-light hover:text-purple-light transition-colors text-sm">About</a>
+                <a href="/roadmap" className="block text-gray-light hover:text-purple-light transition-colors text-sm">Roadmap</a>
                 <a href="/how-it-works" className="block text-gray-light hover:text-purple-light transition-colors text-sm">How It Works</a>
               </nav>
             </div>

@@ -13,7 +13,9 @@
       "Bash(npm run build:*)",
       "Bash(npm run lint)",
       "Bash(ren Logo.svg logo.svg)",
-      "Bash(move Logo.svg logo.svg)"
+      "Bash(move Logo.svg logo.svg)",
+      "Bash(timeout 5:*)",
+      "Bash(timeout:*)"
     ]
   }
 }
